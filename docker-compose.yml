@@ -4,9 +4,11 @@ services:
   web:
     image: vdonthireddy/vjapp:1.0
     environment:
-      SERVICE_HOST: api
+      CLIENT_PORT: 8081
+      SERVICE_HOST: http://api
+      SERVICE_PORT: 8080
     ports:
-     - "8435:8435"
+     - "8081:8081"
     depends_on:
      - api
   api:

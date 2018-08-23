@@ -8,4 +8,4 @@ docker build -t vjservice .
 docker tag vjservice vdonthireddy/vjservice:1.0
 docker push vdonthireddy/vjservice:1.0
 cd ~/code/multicontainer
-docker-compose up -d
+docker-compose up
