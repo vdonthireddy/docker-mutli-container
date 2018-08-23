@@ -2,8 +2,8 @@
 @RestController
 
 class HelloWorldController {
-	@RequestMapping("/")
+	@RequestMapping("/names")
 	String hello() {
-		"Hello World!!!"
+		"Thanks for requesting a response from vjService!!!\n"
 	}
 }

@@ -3,6 +3,8 @@ FROM node:8
 # Create app directory
 WORKDIR /usr/src/app
 
+ENV SERVICE_HOST=$SERVICE_HOST
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
@@ -15,5 +17,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8435
 CMD [ "npm", "start" ]

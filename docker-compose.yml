@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  web:
+    image: vdonthireddy/vjapp:1.0
+    environment:
+      SERVICE_HOST: api
+    ports:
+     - "8435:8435"
+    depends_on:
+     - api
+  api:
+    image: vdonthireddy/vjservice:1.0
+    ports:
+     - "8080:8080"
