@@ -1,5 +1,8 @@
 FROM node:8
 
+RUN npm config set proxy http://proxy-src.research.ge.com:8080
+RUN npm config set https-proxy http://proxy-src.research.ge.com:8080
+
 # Create app directory
 WORKDIR /usr/src/app
 

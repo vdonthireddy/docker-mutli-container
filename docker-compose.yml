@@ -2,16 +2,16 @@ version: '3.4'
 
 services:
   web:
-    image: vdonthireddy/vjapp:1.0
+    image: dtr.predix.io/212368581/vjapp:1.0
     environment:
-      CLIENT_PORT: 8081
+      CLIENT_PORT: 9435
       SERVICE_HOST: http://api
-      SERVICE_PORT: 8080
+      SERVICE_PORT: 9436
     ports:
-     - "8081:8081"
+     - "9435:9435"
     depends_on:
      - api
   api:
-    image: vdonthireddy/vjservice:1.0
+    image: dtr.predix.io/212368581/vjnodeservice:1.0
     ports:
-     - "8080:8080"
+     - "9436:9436"

@@ -1,0 +1,15 @@
+{
+    "name": "vjnodeservice",
+    "version": "1.0.0",
+    "description": "",
+    "author": "Vijaya Donthireddy <vijaya.donthireddy@ge.com",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^4.16.1",
+        "request": "^2.88.0"
+    },
+    "license": "ISC"
+}
