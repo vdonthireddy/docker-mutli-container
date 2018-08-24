@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.16.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: web
+  name: web
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: web
+    spec:
+      containers:
+      - env:
+        - name: CLIENT_PORT
+          value: "9435"
+        - name: SERVICE_HOST
+          value: http://api
+        - name: SERVICE_PORT
+          value: "9436"
+        image: vdonthireddy/vjapp:1.0
+        name: web
+        ports:
+        - containerPort: 9435
+        resources: {}
+      restartPolicy: Always
+status: {}
