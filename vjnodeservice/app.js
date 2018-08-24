@@ -14,8 +14,11 @@ app.get('/', (req, res) => {
     res.send('Hello world from vjnodeservice\n');
 });
 
-app.get('/names', (req, res) => {
-    res.send('Hello Vijay, good afternoon (vjnodeservice)');
+app.get('/got', (req, res) => {
+    console.log("sending response from vjnodeservice...");
+    res.type('json');
+    res.send([{"id":"1", "name":"Vijay"}, {"id":"2", "name":"Kavitha"}, {"id":"3", "name":"Nihar"}, {"id":"4", "name":"Nirav"} ]);
+    console.log('sent response from vjnodeservice.');
 });
 
 app.listen(PORT, HOST);

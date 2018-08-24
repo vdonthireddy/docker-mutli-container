@@ -15,13 +15,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/names', (req, res) => {
-    var uri = process.env.SERVICE_HOST + ':' + process.env.SERVICE_PORT + '/names';
+    var uri = process.env.SERVICE_HOST + ':' + process.env.SERVICE_PORT + '/got';
     console.log('uri: ' + uri);
     request(uri, function(error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log('sending the response...');
+            console.log('getting response from vjapp...');
+            res.type('json');
             res.send(body);
-            console.log('response sent.');
+            console.log('response received in vjapp.');
         } else {
             console.log('response.statusCode: ' + response.statusCode);
             console.log('Error: ' + error);
