@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: vjapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vjapp
+    spec:
+      containers:
+       - name: vjapp
+         image: vdonthireddy/vjapp:2.0
+         ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vjapp
+  labels:
+    app: vjapp
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: vjapp
