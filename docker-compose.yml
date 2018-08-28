@@ -2,9 +2,9 @@ version: '3'
 
 services:
   web:
-    image: vdonthireddy/vjapp:1.0
+    image: vdonthireddy/vjapp:4.0
     environment:
-      CLIENT_PORT: 9435
+      HOST_PORT: 9435
       SERVICE_HOST: http://api
       SERVICE_PORT: 9436
     ports:
@@ -12,6 +12,8 @@ services:
     depends_on:
      - api
   api:
-    image: vdonthireddy/vjnodeservice:1.0
+    image: vdonthireddy/vjnodeservice:4.0
+    environment:
+      HOST_PORT: 9436
     ports:
      - "9436:9436"

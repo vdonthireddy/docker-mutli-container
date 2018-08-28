@@ -3,9 +3,9 @@ FROM node:8
 # Create app directory
 WORKDIR /usr/src/app
 
-#ENV SERVICE_HOST=$SERVICE_HOST
-#ENV SERVICE_PORT=$SERVICE_PORT
-#ENV CLIENT_PORT=$CLIENT_PORT
+ENV SERVICE_HOST=$SERVICE_HOST
+ENV SERVICE_PORT=$SERVICE_PORT
+ENV HOST_PORT=$HOST_PORT
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -20,5 +20,5 @@ RUN npm install
 COPY . .
 
 #CLIENT_PORT
-EXPOSE 80 
+EXPOSE $HOST_PORT 
 CMD [ "npm", "start" ]
